@@ -1,3 +1,4 @@
+```mermaid
 flowchart LR
     Client[Client] --> Site[Website]
     Site --> Email[Email]
@@ -14,3 +15,4 @@ flowchart LR
     Invoice --> Send[Send invoice by email]
     Send --> Accountant[Accountant]
     Accountant --> Check[Check payment once per day]
+```
