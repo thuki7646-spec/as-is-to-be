@@ -1,18 +1,11 @@
 ```mermaid
-flowchart LR
-    Client[Client] --> Site[Website]
-    Site --> Email[Email]
-    Email --> Manager[Manager]
-
-    Manager --> Excel[Manual input to Excel]
-    Manager --> Call[Call warehouse]
-
-    Call --> Stock{Stock available?}
-
-    Stock -->|Yes| Invoice[Create invoice in Word]
-    Stock -->|No| Notify[Notify client]
-
-    Invoice --> Send[Send invoice by email]
-    Send --> Accountant[Accountant]
-    Accountant --> Check[Check payment once per day]
+flowchart TD
+    A[Клиент сайтта өтінім қалдырады] --> B[Өтінім email-ге түседі]
+    B --> C[Менеджер деректерді Excel-ге қолмен енгізеді]
+    C --> D[Менеджер қоймаға қоңырау шалады]
+    D --> E{Тауар бар ма?}
+    E -- Иә --> F[Менеджер Word-та шотты қолмен жасайды]
+    E -- Жоқ --> G[Клиентке бас тарту/күту туралы хабарлау]
+    F --> H[Шот email арқылы жіберіледі]
+    H --> I[Бухгалтер төлемді күніне 1 рет тексереді]
 ```
