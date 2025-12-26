@@ -1,3 +1,4 @@
+mermaid
 flowchart TD
     A[Client] --> B[Website form]
     B --> C[Email]
