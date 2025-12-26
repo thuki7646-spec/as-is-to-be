@@ -1,32 +1,12 @@
-[Клиент]
-    |
-    v
-[Сайтта өтінім қалдырады]
-    |
-    v
-[Email-ге өтінім келеді]
-    |
-    v
-[Менеджер]
-    |
-    +--> Деректерді Excel-ге қолмен енгізеді
-    |
-    +--> Қоймаға қоңырау шалады
-            |
-            v
-        [Тауар бар ма?]
-           /   \
-         Иә     Жоқ
-          |       |
-          v       v
-[Word-та шот]  [Клиентке
-қолмен толтыру]  хабарлау]
-          |
-          v
-[Шот email арқылы жіберіледі]
-          |
-          v
-[Бухгалтер]
-          |
-          v
-[Төлемді күніне 1 рет тексереді]
+flowchart TD
+    A[Client] --> B[Website form]
+    B --> C[Email]
+    C --> D[Manager]
+    D --> E[Manual input to Excel]
+    D --> F[Call warehouse]
+    F --> G{Stock available?}
+    G -- YES --> H[Create invoice in Word]
+    G -- NO --> I[Notify client]
+    H --> J[Send invoice by email]
+    J --> K[Accountant]
+    K --> L[Check payment once per day]
